@@ -715,11 +715,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/d/Projects/Candidate/ProjectCRM/ProjectCRM.csproj",
+      "projectUniqueName": "/home/gyrum/Projects/ProjectCRM/ProjectCRM.csproj",
       "projectName": "ProjectCRM",
-      "projectPath": "/mnt/d/Projects/Candidate/ProjectCRM/ProjectCRM.csproj",
+      "projectPath": "/home/gyrum/Projects/ProjectCRM/ProjectCRM.csproj",
       "packagesPath": "/home/gyrum/.nuget/packages/",
-      "outputPath": "/mnt/d/Projects/Candidate/ProjectCRM/obj/",
+      "outputPath": "/home/gyrum/Projects/ProjectCRM/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gyrum/.nuget/NuGet/NuGet.Config"
@@ -776,7 +776,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.116/RuntimeIdentifierGraph.json"
       }
     }
   }

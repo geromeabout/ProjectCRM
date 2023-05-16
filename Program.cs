@@ -1698,7 +1698,7 @@ namespace ProjectCRM
                 var product = dbContext.Products.SingleOrDefault(p => p.ProductCode == productCode);
                 if (product != null)
                 {
-                    Console.Write(product.ProductCode+"\n"+product.ProductDescription+"\n"+product.IsPopular);
+                    Console.Write("Description: "+product.ProductDescription+"\n"+"Is Popular? "+product.IsPopular);
                     Console.ReadLine();
                     GetProducts();
                 }
