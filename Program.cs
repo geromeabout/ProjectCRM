@@ -158,7 +158,7 @@ namespace ProjectCRM
             }
             else if (chooseNumber==5)
             {
-                //GetAttendances();
+                GetAttendances();
             }
             else if (chooseNumber==6)
             {
@@ -178,6 +178,58 @@ namespace ProjectCRM
                 GetMenu();
             }
         }
+        /*start of attendance */
+        static void GetAttendances()
+        {
+            Console.Clear();
+            Console.WriteLine("ATTENDANCE SYSTEM");
+            Console.WriteLine("[0] TIME IN");
+            Console.WriteLine("[1] TIME OUT");
+            Console.WriteLine("[3] VIEWS ATTENDANCE RECORD");
+            Console.WriteLine("[4] BACK");
+            Console.Write("Enter a number:");
+            char num = Convert.ToChar(Console.ReadKey());
+            switch (num)
+            {
+                case '0':
+                TimeIn();
+                break;
+
+                case '1':
+                TimeOut();
+                break;
+
+                case '3':
+                ViewAttendances();
+                break;
+
+                case '4':
+                GetMenu();
+                break;
+
+                default:
+                GetMenu();
+                break;
+
+            }
+
+            void TimeIn()
+            {
+                Console.Clear();
+                Console.Write("Enter ID number:");
+            }
+
+            void TimeOut()
+            {
+
+            }
+
+            void ViewAttendances()
+            {
+
+            }
+        }
+        /* end of attendance */
         /*start of Sales*/
         static void GetSalesReports()
         {
