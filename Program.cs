@@ -188,23 +188,23 @@ namespace ProjectCRM
             Console.WriteLine("[3] VIEWS ATTENDANCE RECORD");
             Console.WriteLine("[4] BACK");
             Console.Write("Enter a number:");
-            char num = Convert.ToChar(Console.ReadKey());
+            int num = Convert.ToInt16(Console.ReadLine());
             switch (num)
             {
-                case '0':
+                case 0:
                 TimeIn();
                 break;
 
-                case '1':
+                case 1:
                 TimeOut();
                 break;
 
-                case '3':
+                case 3:
                 ViewAttendances();
                 break;
 
-                case '4':
-                GetMenu();
+                case 4:
+		GetMenu();
                 break;
 
                 default:
@@ -217,16 +217,70 @@ namespace ProjectCRM
             {
                 Console.Clear();
                 Console.Write("Enter ID number:");
+                int num = Convert.ToInt16(Console.ReadLine());
+                using (var dbContext = new CRMSDbContext())
+                {
+                    var attendance = new Attendance()
+                    {
+                        DateAttended = DateTime.Now.ToShortDateString(),
+                        TimeIn = DateTime.Now,
+                        EmployeeId = num,
+                        Remarks = ""
+                    };
+                dbContext.Add(attendance);
+                dbContext.SaveChanges();
+		        }	
+                ViewAttendances();
             }
 
             void TimeOut()
             {
+                Console.Clear();
+                Console.Write("Enter ID Number:");
+                int num = Convert.ToInt16(Console.ReadLine());
+                using (var dbContext = new CRMSDbContext())
+                {
+                    var entity = dbContext.Attendances.Find(num);
+                    if (entity!=null)
+                    {
+                        entity.TimeOut = DateTime.Now;
 
+                        dbContext.Update(entity);
+                        dbContext.SaveChanges();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Time In does NOT existed!");
+                    }
+                    ViewAttendances();
+                }
             }
 
             void ViewAttendances()
             {
-
+                Console.Write("Enter Id:");
+                int num = Convert.ToInt16(Console.ReadLine());
+                Console.Clear();
+                Console.WriteLine("VIEW ATTENDANCE by ID");
+                Console.WriteLine("Time In"+"\tTime Out"+"\tTotalHrs"+"\tRemarks");
+                using (var dbContext = new CRMSDbContext())
+                {
+                    var attendances = dbContext.Attendances;
+                    foreach (var attendance in attendances)
+                    {
+                        var ti = attendance.TimeIn.ToShortTimeString();
+                        var to = attendance.TimeOut.ToShortTimeString();
+                        TimeSpan dt = attendance.TimeOut.Subtract(attendance.TimeIn);
+                        var tt =dt.TotalHours;
+                        string rm=attendance.Remarks;
+                        if (tt<=0)
+                        {
+                            rm = "Incomplete Status";
+                            tt = 0;
+                        }
+                        Console.WriteLine(ti+"\t"+to+"\t"+tt+"\t"+rm);
+                    }
+                }
             }
         }
         /* end of attendance */
