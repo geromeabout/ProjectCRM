@@ -230,7 +230,7 @@ namespace ProjectCRM
                 dbContext.Add(attendance);
                 dbContext.SaveChanges();
 		        }	
-                ViewAttendances();
+                ViewAttendancesById(num);
             }
 
             void TimeOut()
@@ -238,34 +238,60 @@ namespace ProjectCRM
                 Console.Clear();
                 Console.Write("Enter ID Number:");
                 int num = Convert.ToInt16(Console.ReadLine());
+                DateTime ts = DateTime.Now.AddDays(-1);
+                string toDate = DateTime.Now.ToShortDateString();
+                string yesterDate = ts.ToShortDateString();
                 using (var dbContext = new CRMSDbContext())
                 {
-                    var entity = dbContext.Attendances.Find(num);
-                    if (entity!=null)
+                    var entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == toDate);
+                    var sub_entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == yesterDate);
+                    if (entity==null && sub_entity==null)
+                    {
+                        Console.WriteLine("Time In does NOT existed!");
+                    }
+                    else
                     {
                         entity.TimeOut = DateTime.Now;
 
                         dbContext.Update(entity);
                         dbContext.SaveChanges();
                     }
-                    else
+                    ViewAttendancesById(num);
+                }
+            }
+            void ViewAttendances()
+            {
+                Console.Clear();
+                Console.WriteLine("VIEW ATTENDANCES");
+                Console.WriteLine("Time In"+"\tTime Out"+"\tTotalHrs"+"\tRemarks");
+                using (var dbContext = new CRMSDbContext())
+                {
+                    var attendances = dbContext.Attendances;
+                    foreach (var attendance in attendances)
                     {
-                        Console.WriteLine("Time In does NOT existed!");
+                        var ti = attendance.TimeIn.ToShortTimeString();
+                        var to = attendance.TimeOut.ToShortTimeString();
+                        TimeSpan dt = attendance.TimeOut.Subtract(attendance.TimeIn);
+                        var tt =dt.TotalHours;
+                        string rm=attendance.Remarks;
+                        if (tt<=0)
+                        {
+                            rm = "Incomplete Status";
+                            tt = 0;
+                        }
+                        Console.WriteLine(ti+"\t"+to+"\t"+tt+"\t"+rm);
                     }
-                    ViewAttendances();
                 }
             }
 
-            void ViewAttendances()
+            void ViewAttendancesById(int Id)
             {
-                Console.Write("Enter Id:");
-                int num = Convert.ToInt16(Console.ReadLine());
                 Console.Clear();
                 Console.WriteLine("VIEW ATTENDANCE by ID");
                 Console.WriteLine("Time In"+"\tTime Out"+"\tTotalHrs"+"\tRemarks");
                 using (var dbContext = new CRMSDbContext())
                 {
-                    var attendances = dbContext.Attendances;
+                    var attendances = dbContext.Attendances.Where(c => c.EmployeeId == Id);
                     foreach (var attendance in attendances)
                     {
                         var ti = attendance.TimeIn.ToShortTimeString();
