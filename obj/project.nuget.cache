@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OVAjED68v2cgOthsanoqNhgVf2s8W2SnNzh/+sXfXuBg87+Hb36Bq9T8kQdgaRYvZ9LpAEZnDQYSBluxA21aSA==",
+  "dgSpecHash": "v1tVeX6Lc28EvfOw4AHnzHAuE426Nwaw67YV77qQaCvTpUUkBnZzwYgTumLPzUjUIVKJXld2bafneNvkKnvq9g==",
   "success": true,
   "projectFilePath": "/home/gyrum/Projects/ProjectCRM/ProjectCRM.csproj",
   "expectedPackageFiles": [
@@ -23,7 +23,8 @@
     "/home/gyrum/.nuget/packages/pomelo.entityframeworkcore.mysql/6.0.2/pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512",
     "/home/gyrum/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/home/gyrum/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "/home/gyrum/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/home/gyrum/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/gyrum/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.19/microsoft.netcore.app.host.linux-x64.6.0.19.nupkg.sha512"
   ],
   "logs": []
 }

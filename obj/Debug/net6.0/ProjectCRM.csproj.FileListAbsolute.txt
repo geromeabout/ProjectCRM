@@ -34,7 +34,6 @@
 /home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/ProjectCRM.deps.json
 /home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/ProjectCRM.runtimeconfig.json
 /home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/ProjectCRM.dll
-/home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/ref/ProjectCRM.dll
 /home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/ProjectCRM.pdb
 /home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/Humanizer.dll
 /home/gyrum/Projects/ProjectCRM/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
@@ -62,3 +61,4 @@
 /home/gyrum/Projects/ProjectCRM/obj/Debug/net6.0/ref/ProjectCRM.dll
 /home/gyrum/Projects/ProjectCRM/obj/Debug/net6.0/ProjectCRM.pdb
 /home/gyrum/Projects/ProjectCRM/obj/Debug/net6.0/ProjectCRM.genruntimeconfig.cache
+/home/gyrum/Projects/ProjectCRM/obj/Debug/net6.0/refint/ProjectCRM.dll

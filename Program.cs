@@ -182,9 +182,11 @@ namespace ProjectCRM
         static void GetAttendances()
         {
             Console.Clear();
+            int id;
             Console.WriteLine("ATTENDANCE SYSTEM");
             Console.WriteLine("[0] TIME IN");
             Console.WriteLine("[1] TIME OUT");
+            Console.WriteLine("[2] VIEW ATTENDANCE BY ID");
             Console.WriteLine("[3] VIEWS ATTENDANCE RECORD");
             Console.WriteLine("[4] BACK");
             Console.Write("Enter a number:");
@@ -197,6 +199,10 @@ namespace ProjectCRM
 
                 case 1:
                 TimeOut();
+                break;
+
+                case 2:
+                ViewAttendances();
                 break;
 
                 case 3:
@@ -245,7 +251,7 @@ namespace ProjectCRM
                 {
                     var entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == toDate);
                     var sub_entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == yesterDate);
-                    if (entity==null && sub_entity==null)
+                    if (entity==null)
                     {
                         Console.WriteLine("Time In does NOT existed!");
                     }
@@ -263,10 +269,10 @@ namespace ProjectCRM
             {
                 Console.Clear();
                 Console.WriteLine("VIEW ATTENDANCES");
-                Console.WriteLine("Time In"+"\tTime Out"+"\tTotalHrs"+"\tRemarks");
+                Console.WriteLine("ID"+"\tName"+"\t\tDate"+"\t\tTime In"+"\tTime Out"+"\tTotalHrs"+"\tRemarks");
                 using (var dbContext = new CRMSDbContext())
                 {
-                    var attendances = dbContext.Attendances;
+                    var attendances = dbContext.Attendances.Include(t => t.Employee);
                     foreach (var attendance in attendances)
                     {
                         var ti = attendance.TimeIn.ToShortTimeString();
@@ -279,7 +285,7 @@ namespace ProjectCRM
                             rm = "Incomplete Status";
                             tt = 0;
                         }
-                        Console.WriteLine(ti+"\t"+to+"\t"+tt+"\t"+rm);
+                        Console.WriteLine(attendance.EmployeeId+"\t"+attendance.Employee.FullName+"\t"+attendance.DateAttended+"\t"+ti+"\t"+to+"\t\t"+tt+"\t\t"+rm);
                     }
                 }
             }
