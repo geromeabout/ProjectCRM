@@ -786,19 +786,19 @@
     ]
   },
   "packageFolders": {
-    "/home/gyrum/.nuget/packages/": {}
+    "/home/sysadmin/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gyrum/Projects/ProjectCRM/ProjectCRM.csproj",
+      "projectUniqueName": "/mnt/nvme0n1p4/projects/ProjectCRM/ProjectCRM.csproj",
       "projectName": "ProjectCRM",
-      "projectPath": "/home/gyrum/Projects/ProjectCRM/ProjectCRM.csproj",
-      "packagesPath": "/home/gyrum/.nuget/packages/",
-      "outputPath": "/home/gyrum/Projects/ProjectCRM/obj/",
+      "projectPath": "/mnt/nvme0n1p4/projects/ProjectCRM/ProjectCRM.csproj",
+      "packagesPath": "/home/sysadmin/.nuget/packages/",
+      "outputPath": "/mnt/nvme0n1p4/projects/ProjectCRM/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/gyrum/.nuget/NuGet/NuGet.Config"
+        "/home/sysadmin/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -848,18 +848,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.19, 6.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.108/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }

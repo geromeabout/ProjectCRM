@@ -250,7 +250,7 @@ namespace ProjectCRM
                 using (var dbContext = new CRMSDbContext())
                 {
                     var entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == toDate);
-                    var sub_entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == yesterDate);
+                    //var sub_entity = dbContext.Attendances.FirstOrDefault(c => c.EmployeeId == num && c.DateAttended == yesterDate);
                     if (entity==null)
                     {
                         Console.WriteLine("Time In does NOT existed!");

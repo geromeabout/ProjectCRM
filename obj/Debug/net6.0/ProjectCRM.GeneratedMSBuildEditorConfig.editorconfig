@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectCRM
-build_property.ProjectDir = /home/gyrum/Projects/ProjectCRM/
+build_property.ProjectDir = /mnt/nvme0n1p4/projects/ProjectCRM/
