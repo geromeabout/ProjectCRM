@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/nvme0n1p4/projects/ProjectCRM/ProjectCRM.csproj": {}
+    "/home/gyrum/projects/ProjectCRM/ProjectCRM.csproj": {}
   },
   "projects": {
-    "/mnt/nvme0n1p4/projects/ProjectCRM/ProjectCRM.csproj": {
+    "/home/gyrum/projects/ProjectCRM/ProjectCRM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/nvme0n1p4/projects/ProjectCRM/ProjectCRM.csproj",
+        "projectUniqueName": "/home/gyrum/projects/ProjectCRM/ProjectCRM.csproj",
         "projectName": "ProjectCRM",
-        "projectPath": "/mnt/nvme0n1p4/projects/ProjectCRM/ProjectCRM.csproj",
-        "packagesPath": "/home/sysadmin/.nuget/packages/",
-        "outputPath": "/mnt/nvme0n1p4/projects/ProjectCRM/obj/",
+        "projectPath": "/home/gyrum/projects/ProjectCRM/ProjectCRM.csproj",
+        "packagesPath": "/home/gyrum/.nuget/packages/",
+        "outputPath": "/home/gyrum/projects/ProjectCRM/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/sysadmin/.nuget/NuGet/NuGet.Config"
+          "/home/gyrum/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -35,8 +35,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
